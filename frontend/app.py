@@ -12,7 +12,7 @@ task = st.text_input("Enter a task")
 
 # Button
 if st.button("Send Request"):
-    url = "http://127.0.0.1:8000/example/"
+    url = "http://backend:8000/example/"
 
     payload = {
         "name": name,

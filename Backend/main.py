@@ -1,6 +1,6 @@
 # backend/main.py
 from fastapi import FastAPI
-from backend.api.endpoints import example
+from api.endpoints import example
 
 app = FastAPI(title="DS POC API")
 

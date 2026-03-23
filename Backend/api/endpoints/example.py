@@ -1,7 +1,7 @@
 # backend/api/endpoints/example.py
 from fastapi import APIRouter
-from backend.models.schemas import ExampleRequest, ExampleResponse
-from backend.services.example_service import run_example_logic
+from models.schemas import ExampleRequest, ExampleResponse
+from services.example_service import run_example_logic
 
 router = APIRouter(prefix="/example", tags=["Example"])
 

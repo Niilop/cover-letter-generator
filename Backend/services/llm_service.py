@@ -7,7 +7,7 @@ settings = get_settings()
 # Initialize the LLM
 # We use the API key from your Pydantic settings
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash", 
+    model=settings.gemini_model, 
     temperature=0.3,
     api_key=settings.api_key.get_secret_value() 
 )

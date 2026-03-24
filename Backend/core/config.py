@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     app_name: str = "DS API"
     api_key: SecretStr
     debug: bool = True
+    gemini_model: str
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 

@@ -1,3 +1,4 @@
 API_KEY=supersecret123
+gemini_model=
 DATABASE_URL=url
 APP_NAME=DS API

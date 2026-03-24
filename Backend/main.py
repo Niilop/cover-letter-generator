@@ -1,6 +1,8 @@
 # backend/main.py
 from fastapi import FastAPI
+from fastapi import Depends
 from api.endpoints import example
+from core.config import Settings, get_settings
 
 app = FastAPI(title="DS POC API")
 
@@ -9,8 +11,8 @@ app.include_router(example.router)
 
 # Root endpoint
 @app.get("/")
-def root():
-    return {"message": "API is running"}
+def root(settings: Settings = Depends(get_settings)):
+    return {"message": f"{settings.app_name} is running"}
 
 # Health check
 @app.get("/health")

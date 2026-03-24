@@ -1,8 +1,8 @@
 # backend/core/config.py
 # from core.config import settings
-from pydantic_settings import BaseSettings
+from functools import lru_cache
 
-class Settings(BaseSettings):
+class Settings():
     app_name: str = "DS API"
     api_key: str
     debug: bool = True
@@ -10,5 +10,6 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
 
-settings = Settings()
-
+@lru_cache
+def get_settings():
+    return Settings()

@@ -16,3 +16,7 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+@app.get("/metrics")
+def metrics():
+    return {"uptime": "todo", "requests": 0}

@@ -6,11 +6,7 @@ from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 from api.endpoints import example, llm
 from core.config import Settings, get_settings
-
-# Initialize the rate limiter
-# get_remote_address uses the IP address of the incoming request
-limiter = Limiter(key_func=get_remote_address)
-
+from core.rate_limit import limiter
 
 app = FastAPI(title="DS POC API")
 

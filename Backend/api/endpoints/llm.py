@@ -3,11 +3,9 @@ from models.schemas import SummaryRequest, SummaryResponse
 from services.llm_service import summarize_text
 from slowapi import Limiter
 from slowapi.util import get_remote_address
+from core.rate_limit import limiter
 
 router = APIRouter(prefix="/llm", tags=["AI Solutions"])
-
-# Create a local reference to the limiter
-limiter = Limiter(key_func=get_remote_address)
 
 @router.post("/summarize", response_model=SummaryResponse)
 @limiter.limit("5/minute")

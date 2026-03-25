@@ -17,3 +17,10 @@ class SummaryRequest(BaseModel):
 
 class SummaryResponse(BaseModel):
     summary: str
+
+class ResumeExtraction(BaseModel):
+    name: str
+    skills: List[str]
+    education: List[str]
+    job_experience: str
+    brief_summary: str

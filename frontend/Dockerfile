@@ -6,7 +6,7 @@ WORKDIR /app
 # Copy only frontend folder contents into /app
 COPY ./frontend /app
 
-COPY requirements.txt /app/
+COPY frontend/requirements.txt /app/
 
 RUN pip install --no-cache-dir -r requirements.txt
 

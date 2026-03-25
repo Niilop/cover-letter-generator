@@ -1,4 +1,5 @@
 # backend/services/example_service.py
+from models.schemas import ExampleRequest
 
-def run_example_logic(name: str, task: str) -> str:
-    return f"Hello {name}, your task '{task}' was processed successfully!"
+def run_example_logic(data: ExampleRequest) -> str:
+    return f"Hello {data.name}, your task '{data.task}' was processed successfully!"

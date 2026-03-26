@@ -7,3 +7,5 @@ python-dotenv
 langchain
 langchain_google_genai
 slowapi
+PyMuPDF
+python-multipart

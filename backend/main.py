@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
-from api.endpoints import example, llm
+from api.endpoints import example, llm, document
 from core.config import Settings, get_settings
 from core.rate_limit import limiter
 
@@ -28,6 +28,7 @@ app.add_middleware(
 # Include routes
 app.include_router(example.router)
 app.include_router(llm.router)
+app.include_router(document.router)
 
 # Root endpoint
 @app.get("/")

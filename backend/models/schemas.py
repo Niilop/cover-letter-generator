@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 from typing import List, Optional
-
 # backend/models/schemas.py
 from pydantic import BaseModel
 
@@ -24,3 +23,13 @@ class ResumeExtraction(BaseModel):
     education: List[str]
     job_experience: str
     brief_summary: str
+
+class ExtractedTextResponse(BaseModel):
+    text: str
+
+class CoverLetterRequest(BaseModel):
+    resume_text: str
+    job_description: str
+
+class CoverLetterResponse(BaseModel):
+    cover_letter: str
